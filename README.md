@@ -11,6 +11,11 @@ What does this project include?:
 - create_tables.py: We have to run this file before load files in order to create (or recreate) database sparkifydb for user student. 
 - etl.py Read files and loads them into the database sparkifydb
 
+ETL Process:
+- The process extract songs and logs json that are found in files in data directory. The process find recursively from both filepath and calling process_song_file or process_song_file functions that get every json and make the insert in every table.
+- From songs logs you load songs and artists tables
+- From logs log you load time and user tables
+- In the last process, with logs json, we select songId and artistId that could be related with it and load songsPlays table.
 
 Results:
     You can test this project and data files with test.ipynb that shows you a few rows for each

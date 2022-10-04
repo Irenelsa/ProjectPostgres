@@ -114,6 +114,7 @@ def process_data(cur, conn, filepath, func):
     print('{} files found in {}'.format(num_files, filepath))
 
     # iterate over files and process
+    '''call song process or log process functions'''
     for i, datafile in enumerate(all_files, 1):
         func(cur, datafile)
         conn.commit()
